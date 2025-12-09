@@ -1,5 +1,5 @@
 const express = require("express");
-const ErrorHandler = require("./middleware/catchAsyncErrors");
+const ErrorMiddleware = require("./middleware/error");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -62,6 +62,6 @@ app.use("/api/v2/withdraw", withdraw);
 app.get("/ping", (req, res) => res.send("pong"));
 
 // it's for errorHandler
-app.use(ErrorHandler);
+app.use(ErrorMiddleware);
 
 module.exports = app;
