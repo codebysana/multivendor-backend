@@ -25,7 +25,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "http://localhost:3000", // your frontend
+    origin: "https://mern-multivendor-frontend.vercel.app/", // your frontend
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -65,3 +65,4 @@ app.get("/ping", (req, res) => res.send("pong"));
 app.use(ErrorMiddleware);
 
 module.exports = app;
+
